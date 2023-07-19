@@ -1,0 +1,31 @@
+body {background-image: radial-gradient(#888,#222);
+      background-repeat: no-repeat;
+      color:white; font-size: 30px;
+      height: 100%;}
+.carousel #state-1 #state-2 #state-3 {/*border:1px solid red;*/
+           width: 500px; height:700px;
+          /* border:10px solid #555;*/
+           position: relative; margin:100px 50px;
+           perspective: 1000px;}
+.carousel  .slide {width:500px; height: 700px;
+                  /*border: 1px solid green;*/
+                  position: absolute;
+                  transform: rotateY(-25deg) translateZ(30px);
+                  transition: 1s;}
+.carousel  .slide a {position: absolute;
+                    right:-20px;
+                    top:50%;}
+.carousel  .slide a::after {content: url(arrow_forward_ios_FILL0_wght400_GRAD0_opsz48\ \(1\).svg);
+                           background-color: #fff8; width: 42px; height: 45px;
+                           display: block; border-radius: 25px;}                                      
+.carousel  .slide:nth-child(1) {transform: rotateY(-30deg) translateZ(-400px);
+                                filter:brightness(80%); opacity: 0.5;}
+.carousel  .slide:nth-child(2) {transform: rotateY(-30deg) translateZ(-200px);
+                                filter:brightness(90%); opacity: 0.75;}
+.carousel  .slide:nth-child(3) {transform: rotateY(-30deg) translateZ(0px);}
+#state-3:target .slide:nth-child(2) {transform: rotateY(-30deg) translateZ(0px);
+                                     z-index: 3;}
+#state-3:target .slide:nth-child(3) {transform: rotateY(-30deg) translateZ(-400px);
+                                     z-index: 1;}
+#state-3:target .slide:nth-child(1) {transform: rotateY(-30deg) translateZ(-200px);
+                                     z-index: 2;}                                               
